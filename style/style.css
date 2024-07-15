@@ -1,0 +1,536 @@
+
+*{
+    font-family: "Roboto", sans-serif;
+    color: #272727;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.modal_menu_wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.514);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0s linear 0.2s;
+    z-index: 10000;
+}
+.modal_menu_wrapper.--opened {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s
+}
+.modal_menu {
+    position: absolute;
+    padding: 20px 40px;
+    border-radius: 6px;
+    background-color: #098;
+    border: 2px solid white;
+}
+.container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu__list{
+    display: flex;
+    list-style-type: none;
+}
+.menu__item + .menu__item{
+    margin-left: 40px;
+}
+.menu__item{
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #098;
+    font-weight: bold;
+}
+.logo-img{
+    width: 70px;
+    height: 70px;
+}
+.header{
+    background-color: #fff;
+    border-bottom: 20px solid #eee;
+}
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tur-request{
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    padding: 15px;
+    background-color: #eee;
+}
+.tur-request__label{
+    font-size: 16px;
+    color: #333;
+}
+.tur-request__input{
+    display: block;
+    padding: 5px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#request__button{
+    background-color: #098;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 16px;
+    height: 100%;
+    margin-bottom: 1px;
+}
+.turs__image{
+    margin-top: 20px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.turs__title{
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.turs__wrapper{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.tur-block__content{
+    padding: 20px;
+    cursor: pointer;
+}
+.tur-block__title{
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+}
+.tur-block__cost{
+    display: block;
+    font-size: 20px;
+    margin-top: 16px;
+    color: #098;
+    font-weight: bold;
+}
+.tur-block__date{
+    margin-top: 14px;
+    font-size: 15px;
+    display: block;
+}
+.tur-block__days{
+    margin-top: 4px;
+    font-size: 15px;
+    display: block;
+}
+.documents__title{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+}
+.documents__form{
+    background-color: #eee;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.documents__radiogroup{
+    margin-bottom: 10px;
+}
+.documents__radiolabel{
+    padding-left: 10px;
+    font-size: 18px;
+}
+.documents__radiobtn{
+    transform: scale(1.5);
+}
+.pas__label{
+    font-size: 18px;
+    color: #333;
+}
+.pas__input{
+    display: block;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#pas__button{
+    background-color: #098;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 18px;
+    height: 100%;
+    margin-bottom: 1px;
+}
+.documents__title{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+}
+.reports__inputs{
+    background-color: #eee;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.reports__dates{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reports__date{
+    display: block;
+    font-size: 18px;
+    margin-right: 30px;
+}
+.reports__label{
+    margin-right: 10px;
+    display: block;
+    font-size: 20px;
+}
+.reports__radiobtns{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reports__radiolabel{
+    display: block;
+    padding: 10px;
+}
+.reports__radiobtn{
+    display: block;
+}
+.reports__radiolabel + .reports__radiobtn{
+    margin-left: 30px;
+}
+.reports__button{
+    margin-top: 20px;
+    background-color: #098;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 18px;
+}
+.report-block{
+    display: block;
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 5px;
+}
+.report__title, .report__cost, .report__days, .report__cost, .report__fio, .report__phone, .report__date, .report__login {
+    font-size: 18px;
+}
+.tur__title{
+    margin-top: 40px;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
+.tur__fromCity{
+    margin-top: 20px;
+    display: block;
+    font-size: 20px;
+}
+.tur__days{
+    margin-top: 5px;
+    display: block;
+    font-size: 20px;
+}
+.tur__description{
+    margin-top: 20px;
+    display: block;
+    font-size: 18px;
+}
+.tur__cost{
+    margin-top: 20px;
+    display: block;
+    font-size: 24px;
+}
+.tur__button{
+    background-color: #098;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+.tur__delete{
+    margin-left: 30px;
+    background-color: #098;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+.authorization_block,
+.registration_block {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 400px;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.logout_button,
+.authorization_button{
+    padding: 5px 15px;
+    background-color: #098;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+}
+.modal_inputs {
+    padding-bottom: 14px;
+}
+.modal_inputs input {
+    outline: none;
+    padding: 4px 8px;
+    margin-top: 4px;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: inset 0 0 3px;
+}
+.field-title {
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Arial';
+    font-weight: 600;
+    color: #1d003d;
+}
+#registration-btn,
+#authorization-btn{
+    background-color: #098;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#authorization-btn:hover,
+#registration-btn:hover {
+    background-color: rgb(214, 196, 207);
+}
+#reg_link,
+#auth_link {
+    text-decoration: underline;
+    cursor: pointer;
+    line-height: 40px;
+}
+.buy__tur-block{
+    max-width: 500px;
+}
+.buy__title{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.buy__label{
+    margin-top: 10px;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+}
+.buy__input{
+    display: block;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#buy__tur-block-btn{
+    margin-top: 20px;
+    background-color: #fff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 18px;
+}
+.add__tur-block{
+    max-width: 500px;
+}
+.add__title{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.add__label{
+    margin-top: 10px;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+}
+.add__input{
+    display: block;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#add__tur-block-btn{
+    margin-top: 20px;
+    background-color: #fff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 18px;
+}
+.table{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.document__requestItem{
+    cursor: pointer;
+}
+.status__radiogroup{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.status-block{
+    max-width: 500px;
+}
+.status__title{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.status__label{
+    padding-left: 10px;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+}
+.status__input{
+    display: block;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.status__button{
+    margin-top: 20px;
+    background-color: #fff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 18px;
+}
+.report__title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.report__titl{
+    font-size: 18px;
+    font-weight: bold;
+}
+footer {
+    max-width: 1920px;
+    width: 100%;
+    margin-top: auto;
+    padding: 60px 0;
+    display: flex !important;
+    justify-content: center;
+    background-color: rgb(245 245 245);
+}
+.footer-wrapper {
+    max-width: 1300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-block--main_information {
+    color: gray;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-left: 20px;
+    max-width: 220px;
+}
+.footer-block--main_information li {
+    padding: 6px 0;
+}
+.footer-block li {
+    padding: 2px 0;
+    font-size: 14px;
+    color: rgb(39, 39, 39);
+}
+.footer-block--title {
+    font-weight: bold;
+    font-size: 22px;
+    color: #098;
+    padding-bottom: 10px;
+}
+.footer-block--contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: gray;
+}
+.footer-block--contacts_phone {
+    font-size: 30px;
+    color: black;
+    display: flex;
+    line-height: 40px;
+}
+.footer-block--contacts_phone object {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+}
+.footer-block--contacts p {
+    padding: 4px 0;
+}
